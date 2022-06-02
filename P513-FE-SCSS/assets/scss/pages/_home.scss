@@ -1,0 +1,78 @@
+@import "../variables";
+@import "../mixins";
+
+.first-company-sec1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-content: center;
+  &__overlay {
+    position: absolute;
+    background-color: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.simbrella.com/site/assets/files/1040/cover.jpg);
+    top: 0;
+    left: 0;
+    z-index: -2;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: cover;
+  }
+  &__text {
+    position: relative;
+    top: 35%;
+    color: #ffffff;
+    @include containerStyle();
+    width: 100%;
+    &__info {
+      max-width: 640px;
+      line-height: 1.29;
+      font-weight: 500;
+      &__h1 {
+        padding-bottom: 16px;
+        font-size: 48px;
+        letter-spacing: -0.01;
+      }
+    }
+    &__paragraph {
+      padding-bottom: 48px;
+      font-size: 15px;
+      line-height: 1.87;
+    }
+    &__scroll-link {
+      position: relative;
+      display: inline-block;
+      padding: 0 0 0 34px;
+      font-size: 14px;
+      font-family: inherit;
+      line-height: 1.71;
+      color: #ffffff;
+      text-decoration: none;
+      margin-top: 100px;
+    }
+    &__scroll-link::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 22px;
+      height: 41px;
+      left: 0;
+      top: -100%;
+      background-image: url(https://www.simbrella.com/site/templates/img/mouse_icon.svg);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+    // &__span {
+    //   padding-left: 34px;
+    // }
+  }
+}

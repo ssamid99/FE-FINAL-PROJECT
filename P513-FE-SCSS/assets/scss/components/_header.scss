@@ -1,0 +1,53 @@
+@import "../variables";
+@import "../mixins";
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  &__container {
+    @include flexbox(center, space-between);
+    @include containerStyle();
+    padding: 0px 20px;
+    height: 80px;
+    &__logo {
+      &__link {
+        display: inline-block;
+        width: 154px;
+        height: 53px;
+        &__image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &__nav {
+      &__list {
+        @include flexbox(center, space-between);
+        list-style-type: none;
+        &__list-item {
+          padding-left: 35px;
+          &__link {
+            font-style: inherit;
+            font-size: 17px;
+            text-decoration: none;
+            line-height: 1.41;
+            color: #eee;
+            padding: 8px 0;
+          }
+          &__link:hover {
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+.sticky {
+  height: 80px;
+  background-color: white;
+}
+@include underTabletOnly {
+  .header__container__nav {
+    display: none;
+  }
+}
